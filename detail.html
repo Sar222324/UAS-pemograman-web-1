@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Buku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-banner">
+        <h1>-= DETAIL BUKU =-</h1>
+        <p class="subtitle">Deskripsi Lengkap Resensi Buku</p>
+    </header>
+
+    <div class="main-wrapper">
+
+        <aside class="sidebar">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="buku.html" class="active">Daftar Buku</a></li>
+                <li><a href="gallery.html">Galeri</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="form.html">Formulir</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            <h2 id="judul-header">Detail Buku</h2>
+
+            <div class="detail-wrapper">
+                <div class="detail-cover">
+                    <img id="gambar-buku" src="images/lp.webp" alt="Cover Buku">
+                </div>
+                <div class="detail-info">
+                    <h3 id="judul-buku">Laskar Pelangi</h3>
+                    <p><b>Penulis:</b> <span id="penulis-buku">Andrea Hirata</span></p>
+                    <p><b>Penerbit:</b> <span id="penerbit-buku">Bentang Pustaka</span></p>
+                    <p><b>Tahun Terbit:</b> <span id="tahun-buku">2005</span></p>
+                    <p><b>Kategori:</b> <span id="kategori-buku">Novel / Fiksi Sastra</span></p>
+                    <hr>
+                    <h4>Deskripsi / Sinopsis:</h4>
+                    <p id="sinopsis-1">
+                        Novel ini menceritakan tentang kehidupan 10 anak dari keluarga miskin di Pulau Belitung 
+                        yang berjuang untuk menuntut ilmu di sekolah dasar tua yang nyaris ditutup.
+                    </p>
+                    <p id="sinopsis-2">
+                        Dengan bimbingan guru yang berdedikasi, anak-anak yang dijuluki "Laskar Pelangi" ini belajar
+                        mengatasi berbagai keterbatasan untuk meraih mimpi mereka.
+                    </p>
+                    <a href="buku.html" class="btn-back">&laquo; Kembali ke Daftar Buku</a>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <footer>
+        <p class="identitas-mhs">
+            SITI AINURRAHMAH A | 241011701252 | 05SIFX001
+        </p>
+        <small>Pemrograman Web 1 - Universitas Pamulang</small>
+    </footer>
+
+    <script>
+        const dataBuku = {
+            "laskar-pelangi": {
+                judul: "Laskar Pelangi",
+                penulis: "Andrea Hirata",
+                penerbit: "Bentang Pustaka",
+                tahun: "2005",
+                kategori: "Novel / Fiksi Sastra",
+                gambar: "images/lp.webp",
+                s1: "Novel ini menceritakan tentang kehidupan 10 anak dari keluarga miskin di Pulau Belitung, Provinsi Bangka Belitung, yang berjuang untuk menuntut ilmu di sebuah sekolah dasar tua milik Muhammadiyah yang nyaris ditutup karena kekurangan murid.",
+                s2: "Dengan bimbingan seorang guru yang sangat berdedikasi, Bu Mus, serta kepala sekolah Pak Harfan, anak-anak yang dijuluki 'Laskar Pelangi' ini belajar mengatasi berbagai keterbatasan ekonomi dan fasilitas untuk meraih mimpi-mimpi besar mereka."
+            },
+            "bandit": {
+                judul: "Bandit-Bandit Berkelas",
+                penulis: "Tere Liye",
+                penerbit: "Sabak Grip",
+                tahun: "2021",
+                kategori: "Novel Aksi / Petualangan",
+                gambar: "images/b3.jpg",
+                s1: "Novel ini mengisahkan tentang dunia aksi penuh intrik, strategi cerdas, dan petualangan menegangkan khas serial Tere Liye. Menceritakan para tokoh berpengaruh yang bergerak di balik layar perekonomian dan kekuasaan global.",
+                s2: "Disajikan dengan alur yang cepat, cerita ini penuh dengan persahabatan, persaingan sengit, serta komitmen moral dalam menghadapi dunia bisnis dan politik yang penuh tipu daya."
+            },
+            "bumi-manusia": {
+                judul: "Bumi Manusia",
+                penulis: "Pramoedya Ananta Toer",
+                penerbit: "Lentera Dipantara",
+                tahun: "1980",
+                kategori: "Sastra Sejarah",
+                gambar: "images/bm.jpg",
+                s1: "Berlatar belakang Indonesia di akhir abad ke-19 pada masa kolonial Belanda. Karya monumental ini mengisahkan perjalanan Minke, seorang pemuda pribumi berpendidikan Eropa yang berjuang melawan ketidakadilan dan diskriminasi rasial.",
+                s2: "Minke juga menjalin hubungan dengan Annelies Mellema dan mengagumi keteguhan hati Nyai Ontosoroh, wanita pribumi gigih yang memperjuangkan hak-hak hukum keluarganya."
+            },
+            "alexandre": {
+                judul: "Sastra Alexandre Dumas",
+                penulis: "Alexandre Dumas",
+                penerbit: "Klasik Dunia",
+                tahun: "1844",
+                kategori: "Sastra Klasik / Petualangan",
+                gambar: "images/ad.png",
+                s1: "Karya sastra klasik pilihan tulisan pengarang terkenal Perancis, Alexandre Dumas. Menceritakan tema balas dendam, keadilan, cinta, dan pengkhianatan dalam balutan kisah sejarah berkelas.",
+                s2: "Buku ini menggambarkan perjuangan seorang pria yang dipenjara secara tidak adil, kemudian bangkit kembali dengan identitas baru untuk menuntut keadilan terhadap orang-orang yang telah merusak hidupnya."
+            },
+            "samuel": {
+                judul: "Novel Samuel",
+                penulis: "Erisca Febriani",
+                penerbit: "Coconut Books",
+                tahun: "2021",
+                kategori: "Novel Remaja / Romance",
+                gambar: "images/sl.jpg",
+                s1: "Mengisahkan tentang kehidupan Samuel Erlangga, seorang pemuda yang tegas, dingin, dan setia kawan. Di balik sikapnya yang keras, Samuel menyimpan kepedulian yang sangat besar terhadap orang-orang yang disayanginya.",
+                s2: "Novel remaja ini menyajikan konflik kehidupan sekolah, loyalitas persahabatan, perkelahian antar-geng, serta lika-liku kisah asmara romantis yang manis dan emosional."
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id') || 'laskar-pelangi';
+
+        if (dataBuku[id]) {
+            const b = dataBuku[id];
+            document.getElementById('judul-header').innerText = "Detail Buku: " + b.judul;
+            document.getElementById('judul-buku').innerText = b.judul;
+            document.getElementById('penulis-buku').innerText = b.penulis;
+            document.getElementById('penerbit-buku').innerText = b.penerbit;
+            document.getElementById('tahun-buku').innerText = b.tahun;
+            document.getElementById('kategori-buku').innerText = b.kategori;
+            document.getElementById('gambar-buku').src = b.gambar;
+            document.getElementById('sinopsis-1').innerText = b.s1;
+            document.getElementById('sinopsis-2').innerText = b.s2;
+        }
+    </script>
+
+</body>
+</html>
