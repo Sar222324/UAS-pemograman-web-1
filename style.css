@@ -1,0 +1,650 @@
+/* 1. RESET & BASE STYLES (Gaya Dasar) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. HEADER BANNER */
+.header-banner {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-banner h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.header-banner .subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* 3. LAYOUT UTAMA (Sidebar + Area Konten) */
+.main-wrapper {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem auto;
+    gap: 2rem;
+    flex: 1; /* Menjaga footer tetap di paling bawah */
+}
+
+/* --- SIDEBAR MENU --- */
+.sidebar {
+    flex: 1;
+    min-width: 220px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #1e3c72;
+    color: #ffffff;
+    padding-left: 1.2rem;
+    font-weight: 600;
+}
+
+/* --- AREA KONTEN --- */
+.content-area {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.content-area h2 {
+    color: #1e3c72;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #1e3c72;
+    padding-bottom: 0.3rem;
+}
+
+.content-area p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    color: #4a5568;
+}
+
+/* 4. HALAMAN BERANDA (index.html) */
+.image-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.img-buku {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.jenis-buku,
+.manfaat-buku {
+    background-color: #f8fafc;
+    border-left: 4px solid #1e3c72;
+    padding: 1.2rem 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.jenis-buku h3,
+.manfaat-buku h3 {
+    color: #2a5298;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.jenis-buku ul,
+.manfaat-buku ol {
+    padding-left: 1.2rem;
+    color: #4a5568;
+}
+
+.jenis-buku ul li,
+.manfaat-buku ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* 5. HALAMAN DAFTAR BUKU (buku.html) */
+/* 5. HALAMAN DAFTAR BUKU (buku.html) - UKURAN DIPERBESAR */
+.gallery-grid {
+    display: grid;
+    /* Mengubah ukuran minimal kolom dari 180px menjadi 240px agar kartu lebih lebar */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.book-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.book-card img {
+    width: 100%;
+    /* Mengubah tinggi gambar dari 220px menjadi 300px agar sampul buku tampak lebih besar */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.book-card h4 {
+    /* Memperbesar ukuran font judul buku */
+    font-size: 1.15rem;
+    color: #1e3c72;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+.book-card .author {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-bottom: 1.2rem;
+}
+
+.btn-detail {
+    display: inline-block;
+    width: 100%;
+    padding: 0.65rem 0;
+    background-color: #1e3c72;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-detail:hover {
+    background-color: #2a5298;
+    color: #ffffff;
+}
+/* 6. HALAMAN GALERI (gallery.html) */
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.8rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-item .caption {
+    font-weight: 600;
+    color: #1e3c72;
+    font-size: 0.9rem;
+}
+
+.gallery-item.featured {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gallery-item.featured img {
+    height: 100%;
+    max-height: 380px;
+}
+
+/* 7. HALAMAN MEDIA (media.html) */
+.media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1.5rem;
+}
+
+.media-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.media-card h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.media-preview img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.media-preview video {
+    width: 100%;
+    height: 250px;
+    border-radius: 6px;
+    background-color: #000000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.audio-section {
+    width: 100%;
+}
+
+.audio-section audio {
+    width: 100%;
+    max-width: 600px;
+    margin: 0.5rem auto 0;
+    display: block;
+}
+
+/* 8. HALAMAN FORMULIR (form.html) */
+.form-container {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1e3c72;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333333;
+    background-color: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1e3c72;
+    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.15);
+    background-color: #ffffff;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 0.3rem 0;
+}
+
+.radio-group label {
+    font-weight: normal;
+    color: #4a5568;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: #1e3c72;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-submit,
+.btn-reset {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit {
+    background-color: #1e3c72;
+    color: #ffffff;
+}
+
+.btn-submit:hover {
+    background-color: #2a5298;
+}
+
+.btn-reset {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-reset:hover {
+    background-color: #cbd5e1;
+}
+
+/* 9. HALAMAN TANGGAL & WAKTU */
+.date-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.date-display {
+    font-size: 1.6rem;
+    color: #1e3c72;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.salam-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(30, 60, 114, 0.2);
+}
+
+/* 10. HALAMAN USIA */
+.age-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.age-result {
+    font-size: 1.5rem;
+    color: #1e3c72;
+    margin-bottom: 0.8rem;
+}
+
+.age-category {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.age-category span {
+    color: #2a5298;
+    font-weight: bold;
+    background-color: #e2e8f0;
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+}
+
+.btn-reload {
+    background-color: #1e3c72;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-reload:hover {
+    background-color: #2a5298;
+}
+
+/* 11. DETAIL BUKU */
+.detail-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.detail-cover img {
+    width: 220px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.detail-info h3 {
+    color: #1e3c72;
+    margin-bottom: 0.8rem;
+}
+
+.detail-info p {
+    margin-bottom: 0.6rem;
+    color: #4a5568;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #1e3c72;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #2a5298;
+    color: #ffffff;
+}
+
+/* 12. FOOTER */
+footer {
+    background-color: #1a202c;
+    color: #cbd5e0;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+}
+
+footer .identitas-mhs {
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+footer small {
+    color: #a0aec0;
+    font-size: 0.85rem;
+}
+
+/* 13. RESPONSIVE DESIGN (HP & Tablet) */
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+        flex: 1 1 calc(50% - 0.5rem);
+    }
+
+    .header-banner h1 {
+        font-size: 1.6rem;
+    }
+
+    .content-area {
+        padding: 1.2rem;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-item.featured {
+        grid-row: span 1;
+        grid-column: span 2;
+    }
+
+    .gallery-item.featured img {
+        height: 250px;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-preview img,
+    .media-preview video {
+        height: auto;
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item.featured {
+        grid-column: span 1;
+    }
+
+    .book-card img {
+        height: 180px;
+    }
+
+    .sidebar ul li {
+        flex: 1 1 100%;
+    }
+}
